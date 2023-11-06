@@ -37,7 +37,7 @@ h1{
 h1:nth-of-type(1){margin-top: 0;}
 h2{font-size: calc(30px - var(--subtract-font-size));}
 h3{font-size: calc(24px - var(--subtract-font-size));}
-h5{font-size: calc(16px - var(--subtract-font-size));}
+h5{font-size: calc(16px - var(--subtract-font-size)); margin-block: 30px;}
 p{margin: 0;}
 
 main a, #SearchResult a{
