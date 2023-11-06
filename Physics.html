@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Physics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/Favicon.png" type="image/png">
+    <script defer src="script.js"></script>
+    <style>
+        li{margin-bottom: 30px; font-size: 20px; margin-bottom: 0;}
+        main h2{display: inline; background: rgb(52, 228, 52); font-size: 30px}
+        li::marker{font-size: 24px;}
+        ol{margin: 0;}
+
+        #types_of_motion li{margin-bottom: 20px;}
+        #types_of_motion li::marker{font-size: 24px;}
+        #types_of_motion li h2{display: inline;}
+        #types_of_motion h3{margin: 0}
+        #types_of_motion div{border: 2px solid black; margin-bottom: 10px; padding: 10px}
+
+        td,th{padding: 0px; padding-inline: 20px;}
+    </style>
+</head>
+
+<body>
+    <div id="SearchResult">
+        <div>
+            <h3>Search result of "<span id="input"></span>". Click on it to go to the page.</h3>
+            <h3 id="Result"></h3>
+            <button class="btn" id="SearchButton" onclick="Close()">Go Back</button>
+        </div>
+    </div>
+    <input type="checkbox" id="input_toggle">
+    <label for="input_toggle" id="toggler"><img src="Images/Navigator.png" draggable="false" alt="Navigation Bar Toggler"></label>
+    <nav>
+        <div id="brand">
+            <img src="Images/Logo.png" id="navbar-img" draggable="false" alt="Logo">
+            <a id="header" href="index.html">BrainWaveScience.com</a>
+        </div>
+        <!-- DT stands for Dropdown Toggler -->
+        <input type="checkbox" id="Input_DT">
+        <label for="Input_DT" id="DT">Science <span id="triangle"></span></label>
+        <div id="dropdown">
+            <a href="Biology.html" class="dropdown_item">Biology</a>
+            <a href="Physics.html" class="dropdown_item">Physics</a>
+            <a href="Chemistry.html" class="dropdown_item">Chemistry</a>
+            <a href="Environment.html" class="dropdown_item">Environment</a>
+        </div>
+        <a href="About.html">About Us</a>
+        <form>
+            <input type="search" placeholder="Search Here" id="searchbar">
+            <button class="btn" onclick="search(event)">Search</button>
+        </form>
+    </nav>
+    <div id="slider">
+        <div id="slides">
+            <!-- Buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5"> <!-- All names should be same so html knows only one of these should be selected. -->
+            <!-- Slide Images -->
+            <div class="slide first"><img src="Images/Banner/Banner1.png" alt="Science" draggable="false" id="image"></div>
+            <div class="slide"><img src="Images/Banner/Banner2.png" alt="Physics" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner3.png" alt="Chemistry" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner4.png" alt="Biology" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner5.png" alt="Environment" draggable="false"></div>
+            <!-- Automatic Navigation -->
+            <div class="navigation-auto">
+                <div id="auto-btn1"></div>
+                <div id="auto-btn2"></div>
+                <div id="auto-btn3"></div>
+                <div id="auto-btn4"></div>
+                <div id="auto-btn5"></div>
+            </div>
+            <!-- Manual Navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio2" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio3" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio4" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio5" class="manual-btn" onclick="reset_timer()"></label>
+            </div>
+            <!-- Arrow Navigation -->
+            <div class="arrows">
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+
+    <h1 id="Measurement"><span>MEASUREMENT</span></h1>
+        <section>
+            <article>
+                <p>
+                    In our daily life, we come across many situations in which the measurement is required. 
+                    Fruits and vegetables are weighed, body measurement is needed for stitching clothes, body temperature is measured to check fever and length of a cloth is measured while buying. 
+                    Measurement is defined as the comparison of a unknown quantity with a known quantity of the same kind. 
+                    In our daily life, we might have to measure the quantities such as length, mass, time and temperature. 
+                    These quantities are referred to as physical quantities.
+                    <br><br>
+                    In earlier times, human beings had used handful, cubit, handspan and foot span as units of measurement. 
+                    However, these length measurement methods are unreliable.
+                    It was soon realised that these measurements could be different for different people. 
+                    The need to have a uniform measurement system that was universally accepted was felt. 
+                    To overcome such inconsistency in the measurement of lengths, some standard objects are used to measure the length of all objects at different places. 
+                    As a result, standard units of measurement, known as the SI units, came into existence and are being used in present times. 
+                    In the SI system of measurement, the standard unit for length is metre denoted by 'm', mass is kilogram denoted by 'kg', time is second denoted by 's' and temperature is kelvin denoted by 'K'. 
+                    This system is used by all countries across the globe. 
+                    There are certain other systems of measurement that are still in use such as foot, pound and second (FPS), centimetre, gram and second (CGS), and metre, kilogram and second (MKS which is the SI unit) systems.
+                </p>
+            </article>
+            <article>
+                <table>
+                <tr>
+                    <th>Measurement</th>
+                    <th colspan="2">SI Unit</th>
+                </tr>
+                <tr>
+                    <td>Length</td>
+                    <td>Metre</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>Mass</td>
+                    <td>kg</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>Second</td>
+                    <td>s</td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>Kelvin</td>
+                    <td>K</td>
+                </tr>
+                </table>
+                <br>
+                <p align="center">Other Units</p>
+                <table>
+                    <tr>
+                        <th colspan="3">FPS</th>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Foot</td>
+                        <td>ft</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Pound</td>
+                        <td>£</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>Second</td>
+                        <td>s</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3">CGS</th>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Centimetre</td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Gram</td>
+                        <td>g</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>Second</td>
+                        <td>s</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3">MKS</th>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>Metre</td>
+                        <td>m</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>Mass</td>
+                        <td>kg</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>Second</td>
+                        <td>s</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <br>
+        <section>
+            <article>
+                <h2><span>Measurement of Time</span></h2>
+                <p>
+                    Time is a phenomenon by which human beings are observing and recording changes in the environment and the universe. 
+                    The knowledge of time and its measurement is very important. 
+                    The standard unit (SI unit) of time is second (s).
+
+                    The knowledge of time is essential for carrying out activities in our daily life. 
+                    Time is the duration between two events. 
+                    In ancient time, people follow some natural events such as the time from one full moon to new moon is 15 days or one fortnight, time between one full moon to the next full moon is approximately 29 days or a month, time between one sunrise to the next is a day and the year is measured as the time taken by the Earth to complete one revolution around the Sun. 
+                    They all are repeated regularly after fixed time intervals.
+                </p>
+            </article>
+            <article>
+                <table>
+                    <tr>
+                        <th colspan="2">Measurements of Time</th>
+                    </tr>
+                    <tr>
+                        <td>60 seconds</td>
+                        <td>1 minute</td>
+                    </tr>
+                    <tr>
+                        <td>60 minutes</td>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <td>24 hours</td>
+                        <td>1 day</td>
+                    </tr>
+                    <tr>
+                        <td>365 days</td>
+                        <td>1 year</td>
+                    </tr>
+                    <tr>
+                        <td>10 years</td>
+                        <td>1 decade</td>
+                    </tr>
+                    <tr>
+                        <td>10 decades</td>
+                        <td>1 century</td>
+                    </tr>
+                    <tr>
+                        <td>10 centuries</td>
+                        <td>1 millennium</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2><span>Devices used to Measure Time Before Technology</span></h2>
+                <h3><span>Sundial</span></h3>
+                <p>
+                    The oldest sundial was found in Egypt dating back to 3500 BC, a sundial has a dial plate with hour lines engraved on it and a gnomon stick which sticks out at an angle, as the sun moves in the sky it casts a shadow on the plate and shows the time, but it works only in the daytime, so people had to find other ways to measure time at nighttime.
+                    A candle clock was used by ancient Chinese to measure time at nighttime; a candle with uniform dimension was used to measure time as the rate at which it would burn for every hour was constant, so markings were made for every inch or so to measure time.
+                </p>
+                <h3><span>Hour Glass</span></h3>
+                <p>
+                    An hourglass is a device used to measure time during ancient times.
+                    It is used to measure time.
+                    Sand is used in an hourglass.
+                    Hence it is also known as a sand clock or a sandglass.
+                    It is made up of two glass bulbs.
+                    The two bulbs are connected to each other vertically through a narrow neck
+                    This narrow neck acts between the two bulbs as a passage that allows the sand to flow in a uniform manner from the upper bulb to the lower one.
+                    The upper and lower bulbs are symmetric to each other in order to ensure the accuracy of the time measured.
+                </p>
+
+                <h3><span>Pendulum clock</span></h3>
+                <p>
+                    Modern clocks make use of a piezoelectric crystal called quartz, you must have read quartz written on a wall clock while checking the time, well this crystal vibrates at a specific frequency when voltage is applied to it, so it is designed in such a way that a frequency of one hertz is obtained from it, this is used to measure time.
+
+                    In this way periodic events can be used to measure time, here is an assignment for you, what periodic events can you find around your other than the one mentioned in this article to measure time, make a note of them and find a way to measure accurate time using it.
+                </p>
+            </article>
+            <article>
+                <img src="Images/Content/Sundial.png" alt="Sundial">
+                <img src="Images/Content/Hourglass.png" alt="Hour Glass">
+                <img src="Images/Content/Pendulum Clock.png" alt="Pendulum Clock">    
+            </article>
+        </section>
+
+    <h1 id="Motion"><span>MOTION</span></h1>
+        <p style="padding-inline: 100px;">
+            The movement of an object is called motion. 
+            For example, all the human beings and animals can move from one place to another without any external help. 
+            All the plants cannot move. 
+            There are some plants that they can move their body parts such as leaves, branches and flowers. 
+            Non-living things such as bike, car, bus and train cannot move on their own. They require an external force to move.
+            A body is said to be in motion if it changes its position with respect to time and surroundings. 
+
+            When a body is not changing its position with respect to surroundings, it is said to be at rest. 
+            For example, lans are fixed on the ceiling, black boards are fixed in our classrooms and vehicles are parked in a parking area. 
+
+            Carefully observe the motion of a bus, a swing, a top and a bee. 
+            You will observe that all these exhibit different types of motion.
+            Some objects move in a straight line, some may follow curved paths some may even rotate and still others vibrate.
+            These different kinds of motion can be divided into the following categories:
+        </p>
+        <section id="types_of_motion">
+            <article>
+                <ol>
+                    <br><br>
+                    <li>
+                        <h2><span>Translatory Motion:</span></h2> 
+                        The motion in which all parts of the body move through the equal distance in the same direction and time is called the translational mation.
+                        For example, when a bus, car or a train moves along a straight line, all parts of the bus, car or train move in the same diection and cover equal distance in a given interval of time.
+                        The path of a body in translational motion can be linear (straight line) or curved.
+                        So, there are two types of translational motion - rectilinear and curvilinear.
+
+                        <br><br>
+                        <h3><span>Rectilinear motion:</span></h3> 
+                        When a body moves along a straight line, it is said to be in linear or rectilinear motion.
+                        A car moving along a straight road, a train moving on a straight track, a child going down a slide, an arrpw shot from a bow, a group of marching soliders and a stone dropped from a height are some examples of rectilinear motion.
+
+                        <br><br>
+                        <h3><span>Curvilinear motion:</span></h3> 
+                        When a body moves along a curved path, it is said to be in curvilinear motion.
+                        The motion of a car taking a turn on a curved road in a hilly area, motion of bullet fired from a gun, a basketball thrown up at an angle are some examples of curvilinear motion.
+                        <br><br>
+                    </li>
+
+                    <li>
+                        <h2><span>Circular Motion:</span></h2> 
+                        When a body moves along a circular path, it is said to be in circular motion. 
+                        In circular motion, the body reaches at the same point from where it had started its motion. 
+                        The motion of minutes hand seconds hand of clock, the earth around the sun, the motion of a toy train around a circular track, the motion of a stone tied to a string and whirled around are some examples of circular motion.
+                    </li>
+
+                    <li>
+                        <h2><span>Rotational Motion:</span></h2> 
+                        Observe the motion of a spinning top. 
+                        The top seems to be moving around an aris passing through its centre. 
+                        Such a motion in which a body moves about an axis is called rotational motion. 
+                        The motion of a bicycle wheel, a giant wheel, a merry-go-round, the blades of a fan and the earth around its axis are all examples of rotational motion. 
+                        In rotational motion, different parts of the body moving in circular path move through different distances in a given interval of time. 
+                        For example, a point near the centre of a rotating body will move through a much smaller distance than a point at the outer surface of the body.
+                    </li>
+
+                    <li>
+                        <h2><span>Oscillatory Motion:</span></h2> 
+                        Observe the motion of a swing. 
+                        You will see that it repeatedly moves to and fro about its position of rest mean position. 
+                        The repeated to and fro motion of a body about a mean position is called oscillatory motion. 
+                        One complete cycle from the point of release to the other extreme and back to the initial point is called one oscillation. 
+                        For example, a swing starts moving from one side of the rest position to the other and back. 
+                        It keeps oscillating between the two extreme positions, moving back and forth. 
+                        Motion of the pendulum of a clock and the motion of a spring when it is given a jork are aiso examples of oscillatory motion
+                    </li>
+                    
+                    <li>
+                        <h2><span>Vibratory Motion:</span></h2> 
+                        The movement of a string of a guitar when it is plucked, the movement of the skin of a drum when it is beaten, the motion shown by the plucked prongs of a tuning fork when hit against a rubber pad, the needle of a sewing machine and the membrane of a drum when hit with a stick are the examples of vibratory motion. 
+                        Such type of motion in which a part of a body develops fast to and fro motion about a mean position is called vibratory motion.
+                    </li>
+                    
+                    <li>
+                        <h2><span>Periodic Motion:</span></h2> 
+                        What is common between the motion of the hands of a clock and the motion of moon around the earth? 
+                        Each of these motions is repeated after fixed intervals of time.
+                        Any motion that repeats itself after a fixed interval of time is called periodic motion. 
+                        The seconds, minute and hour hand of a clock repeat their motion after every 1 minute, 1 hour and 12 hours, respectively. 
+                        The moon repeats its motion around the earth after about 29 days.
+                        The fixed interval of time after which the motion is repeated is called period of the motion. 
+                        The rotation of earth around its axis, the revolution of earth around the sun, the motion of a swing, the motion of the hands of a clock and the motion of a spinning top are a few other examples of periodic motion. 
+                    </li>
+
+                    <li>
+                        <h2><span>Non-periodic Motion:</span></h2> 
+                        Any motion that does not reapeat itself after fixed intervals of time is called non-periodic motion. 
+                        A cyclist moving on a straight road, movement of clouds across the sky and a butterfly flying in the air are examples of non-periodic motion.
+                    </li>
+
+                    <li>
+                        <h2><span>Random Motion:</span></h2> 
+                        Observe the motion of honeybees on the flower, or motion of flies on fruits.
+                        They keep on changing their positionat every instant of time.
+                        When the motion of a body is irregular and unpredictable, it is called random motion.
+                        Some examples of random motion are the flight-path of an insect, motion of dust particles, the flow of water in rivers, and the movement of atoms and molecules in liquids and gases.
+                    </li>
+
+                    <li>
+                        <h2><span>Uniform Motion:</span></h2>
+                        When a body covers equal distances in equal intervals of time, it is said to be in uniform motion.
+                        Some examples of uniform motion are the hands of a clock, pendulum and so on.
+                        In a distance time graph for uniform motion, it forms a straight line.
+                    </li>
+
+                    <li>
+                        <h2><span>Non-Uniform Motion:</span></h2>
+                        When the distance tavelled by at fixed intervals of time is not the same, it is said to be in uniform motion.
+                        An object with non-uniform motion covers unequal distances in the same time intervals.
+                        Trains, buses, cars and aeroplanes have non-uniform motion.
+                        In non-uniform motion case, the distance travelled by an object is not directly proportional to the time and hence the distance-time graph is not a straight line.
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <div>
+                    <img src="Images/Content/Curvilinear Motion.gif" alt="Car moving on a curved road">
+                    <p align="center">Curvilinear Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Car.gif" alt="Car moving straight">
+                    <p align="center">Rectilinear Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Earth.gif" alt="Earth Rotating and Revolving">
+                    <p align="center">Circular, Rotational, Periodic and Uniform Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Oscillatory Motion.gif" alt="Pendulum of a Clock">
+                    <p align="center">Oscillatory Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Guitar Strings.gif" alt="Movement of Guitar Strings">
+                    <p align="center">Vibratory Motion</p>
+                </div>
+                <div>
+                    <p align="center">Movement of Molecules</p>
+                    <img src="Images/Content/Random Motion.gif" alt="Movement of Molecules">
+                    <p align="center">Random, Non-Periodic and Non-Uniform Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Uniform Motion.png" alt="Uniform Motion"></img>
+                    <p>Sample Distance-Time Graph for Uniform Motion</p>
+                </div>
+                <div>
+                    <img src="Images/Content/Non-Uniform Motion.png" alt="Non-Uniform Motion">
+                    <p>Sample Distance-Time Graph for Non-Uniform Motion</p>
+                </div>
+
+            </article>
+        </section>
+
+    <h1 id="Speed"><span>SPEED</span></h1>
+        <section>
+            <article>
+                <p>
+                    Consider a boy walking to school-he requires 10 minutes to cover a distance of 500 m. 
+                    Another boy reaches school by bus he also requires 10 minutes, but the distance travelled in this case is 4 km. 
+                    Although the time taken by both the boys to reach school is the same, the distance travelled is different. 
+                    The boy reaching the school by foot is moving slow as compared to the boy travelling by bus who is moving fast. 
+                    Hence, on comparing two bodies in motion we can say that, one is fast and the other one is slow depending on the time taken to cover the same distance. 
+                    We can calculate the speed of a body by dividing the total distance (d) covered and the time (t) taken for the same. 
+                    Speed is defined as the distance (d) covered by a body in unit time (t). 
+                    The unit for speed is m/s (metre per second) or km/h (kilometre per hour).
+                </p>
+                <center><img src="Images/Content/Speed.png" alt="Speed Formula"></center>
+                <p>
+                    To ascertain the speed of a moving vehicle, a speedometer is installed in the front part of the vehicle.
+                    To ascertain the distance travelled by the vehicle, an odometer is fitted along with the speedometer.
+                </p>
+
+            </article>
+        </section>
+
+    <h1 id="Heat_and_Temperature"><span>HEAT AND TEMPERATURE</span></h1>
+        <section>
+            <ol>
+                <li>
+                    <h2>Heat:</h2> Heat is the transfer of thermal energy from one physical system to another system or from one region in a physical system to another region.
+                    <br>
+                    Eg: The Sun, electrical appliances, burning wood, eating food,friction etc.....
+                </li>
+                <br>
+                <li>
+                    <h2>Temperature:</h2> Temperature describes the average kinetic energy of molecules within a material or system and is measured in Celsius (°C), Kelvin (K) and Fahrenheit (°F).
+                    <br>
+                    Eg: We understand not to touch a hot stove because it will give off heat and burn our hands as it has a high temperature... 
+                </li>
+            </ol>
+            <img src="Images/Content/Heat and temperature.jpg" alt="Heat and temperature" height="250px">
+        </section>
+    
+    <br><br>
+    <h1 id="Types_of_Temperature"><span>TYPES OF TEMPERATURE SCALE</span></h1>
+        <section>
+        <ol>
+            <li>
+                <h2>Celsius:</h2> Celsius, also called centigrade, scale based on 0° for the freezing point of water and 100° for the boiling point of water. Invented in 1742 by the Swedish astronomer Anders Celsius, it is sometimes called the centigrade scale because of the 100-degree interval between the defined points.
+                <br><br>
+            </li>
+                
+            <li>
+                <h2>Fahrenheit:</h2> Fahrenheit temperature scale, scale based on 32° for the freezing point of water and 212° for the boiling point of water, the interval between the two being divided into 180 equal parts.
+                <br><br>
+            </li>
+
+            <li>
+                <h2>Kelvin:</h2> A change of one kelvin is the same amount of temperature change as one degree Celsius, but the Kelvin scale is “absolute” in the sense that it starts at absolute zero, or what Kelvin and other scientists called “infinite cold.” (0 K = -273.15 degrees C = -459.67 degrees F.
+                <br><br>
+            </li>
+        </ol>
+        <img src="Images/Content/Temperature.png" alt="Types of Temperature Scale" height="300px">
+        </section>
+    <center>
+        <iframe src="Conversion of Temperature.html" title="Converter" width="900px" height="450px" style="background: white;"></iframe>
+    </center>           
+           
+    <h1 id="Light"><span>LIGHT</span></h1>
+        <section>
+        <article>
+            <h2><span>Light</span></h2>
+            <p>
+               Light is a type of electromagnetic radiation that allows the human 
+               eye to see or makes objects visible. It is also defined as visible 
+               radiation to the human eye. Photons, which are tiny packets of energy,
+               are found in light. Light always moves in a straight line.
+            </p>
+            <br><br>
+
+            <h2><span>Properties of an Light</span></h2>
+            <ul>
+                <li>Light travels in a straight line.</li>
+                <li>The speed of light is faster than sound. Light travels at a speed of 3 x 108 m/s.</li>
+                <li>Light is a form of energy.</li>
+                <li>Light does not need any medium for its propagation.</li>
+                <li>Light in different colours has different wavelengths and frequencies.</li>        
+            </ul>
+
+            <h2><span>Structure of Light</span></h2>
+                <p>
+                    Light not only moves in waves; it also moves with a flow of little particles. Scientists call these particles of light, photons. The packets contain the energy that makes up the energy of the light. Scientists measure something called the relative energy of different types of light.
+                </p>
+        </article>
+        <article>
+                <img src="Images/Content/Property of Light.png" alt="Properties of an Light">
+                <img src="Images/Content/Sturucture of light.png" alt="Structure of an Atom">
+        </article>
+        </section>
+
+    <h1 id="Mirror"><span>MIRROR</span></h1>
+        <section>
+        <article>
+            <h2><span>Mirror</span></h2>
+            <p>
+                A mirror is defined as a reflecting surface and can be 
+                explained by the law of reflection, which states that when 
+                a ray of light is made to fall on the reflecting surface, 
+                the incident ray, the reflected ray and the normal to the 
+                surface of the mirror all lie in the same plane and the angle 
+                of incidence is equal to the angle of reflection.
+            </p>
+            <br><br>
+        </article>
+        <img src="Images/Content/Mirror.png" alt="Mirror">
+        </section>
+
+    <h1 id="Types_of_Mirrors"><span>TYPES OF MIRRORS</span></h1>
+        <section>
+            <ol>
+                <li>
+                    <h2>Plane Mirror:</h2> The images formed from a plane mirror are the reflected images in their normal proportions but reversed from left to right. These are the most widely used mirrors.
+                    <br><br><br>
+                </li>
+                
+                <li>
+                    <h2>Concave Mirrors:</h2> These are the spherical mirrors that are curved inward and the image obtained from these mirrors depends on the placement of the object.
+                    <br><br><br>
+                </li>      
+
+                <li>
+                    <h2>Convex Mirror:</h2> These are the spherical mirrors that are curved outward and the image obtained is virtual, diminished and erect for a real object.
+                    <br><br><br>
+                </li>      
+            </ol>
+            <article>
+                <img src="Images/Content/Types of Mirror.png" alt="Types of Miror">
+            </article>
+        </section>
+             
+    <h1 id="Electricity"><span>ELECTRICITY</span></h1>
+        <section>
+        <article>
+            <p>
+                Our ancestors relied on fire for light, warmth and cooking.
+                Today at the flick of a switch, turn of a knob or the push  of a button, we have instant power. 
+                This is possible because of the electric current.
+                Electricity is one of the important discoveries that helped us transform our way of living. 
+                From the time we wake up till the time we sleep at night, our life is dependent on electricity.
+            </p>
+
+            <ul>
+                <li>An electric current is a flow of charged particles, such as electrons or ions, moving through an electrical conductor or space. It is defined as the net rate of flow of electric charge through a surface.</li>
+                <li>Electrons are minute particles that exist within the molecular structure of a substance. Sometimes, these electrons are tightly held, and other times they are loosely held. When electrons are loosely held by the nucleus, they are able to travel freely within the limits of the body.</li>
+            </ul>
+
+            <h2><span>Conventional Current flow Vs Electron Flow</span></h2>
+            <ul>
+               <li>Conventional Current Flow:The conventional current flow is from the positive to the negative terminal and indicates the direction in which positive charges would flow.</li>
+               <li>Electron Flow: The electron flow is from negative to positive terminal. Electrons are negatively charged and are therefore attracted to the positive terminal as unlike charges attract.</li>
+            </ul>
+        </article>
+        <article>
+            <img src="Images/Content/Electricity Pic.png" alt=" Electricity Picture">
+            <img src="Images/Content/Electricity Flow.png" alt="Electricity Flow">
+        </article>
+        </section>
+
+    <h1 id="Conductors_and_Insulators"><span>CONDUCTORS AND INSULATORS</span></h2>
+        <section>
+        <ul>
+            <p><h2><span>Conductors:</span></h2> Materials that allow electricity (by allowing the free flow of electrons from one particle to another) or heat to flow through them easily are called conductors. Some example of conductors of both heat and electricity include most metals like iron, silver and gold and so on.</p>
+            <br>
+            <p><h2><span>Insulators:</span></h2> Materials that doesn't allow electricity (by restricting the free flow of electrons from one particle to another) or heat to flow through them easily are called insulators. Examples of insulators of both heat and electricity include plastic, wood, glass and so on.</p>
+        </ul>
+        <img src="Images/Content/Conductors and insulators.png" alt="Conductors and Insulators">
+        </section>
+
+    </main>
+    <footer>&copy; Copyright 2023 - BrainWaveScience.com - Created by Devesh and Vignesh.</footer>
+
+</body>
+</html>d

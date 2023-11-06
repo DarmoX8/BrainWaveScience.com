@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Environment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/Favicon.png" type="image/png">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div id="SearchResult">
+        <div>
+            <h3>Search result of "<span id="input"></span>". Click on it to go to the page.</h3>
+            <h3 id="Result"></h3>
+            <button class="btn" id="SearchButton" onclick="Close()">Go Back</button>
+        </div>
+    </div>
+    <input type="checkbox" id="input_toggle">
+    <label for="input_toggle" id="toggler"><img src="Images/Navigator.png" draggable="false" alt="Navigation Bar Toggler"></label>
+    <nav>
+        <div id="brand">
+            <img src="Images/Logo.png" id="navbar-img" draggable="false" alt="Logo">
+            <a id="header" href="index.html">BrainWaveScience.com</a>
+        </div>
+        <!-- DT stands for Dropdown Toggler -->
+        <input type="checkbox" id="Input_DT">
+        <label for="Input_DT" id="DT">Science <span id="triangle"></span></label>
+        <div id="dropdown">
+            <a href="Biology.html" class="dropdown_item">Biology</a>
+            <a href="Physics.html" class="dropdown_item">Physics</a>
+            <a href="Chemistry.html" class="dropdown_item">Chemistry</a>
+            <a href="Environment.html" class="dropdown_item">Environment</a>
+        </div>
+        <a href="About.html">About Us</a>
+        <form>
+            <input type="search" placeholder="Search Here" id="searchbar">
+            <button class="btn" onclick="search(event)">Search</button>
+        </form>
+    </nav>
+    <div id="slider">
+        <div id="slides">
+            <!-- Buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5"> <!-- All names should be same so html knows only one of these should be selected. -->
+            <!-- Slide Images -->
+            <div class="slide first"><img src="Images/Banner/Banner1.png" alt="Science" draggable="false" id="image"></div>
+            <div class="slide"><img src="Images/Banner/Banner2.png" alt="Physics" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner3.png" alt="Chemistry" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner4.png" alt="Biology" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner5.png" alt="Environment" draggable="false"></div>
+            <!-- Automatic Navigation -->
+            <div class="navigation-auto">
+                <div id="auto-btn1"></div>
+                <div id="auto-btn2"></div>
+                <div id="auto-btn3"></div>
+                <div id="auto-btn4"></div>
+                <div id="auto-btn5"></div>
+            </div>
+            <!-- Manual Navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio2" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio3" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio4" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio5" class="manual-btn" onclick="reset_timer()"></label>
+            </div>
+            <!-- Arrow Navigation -->
+            <div class="arrows">
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+    <h1 id="Climate_Change"><span>CLIMATE CHANGE</span></h1>
+        <section>
+            <article>
+                <p>
+                    The main threats of climate change, stemming from the rising temperature of Earth's atmosphere include rising sea levels, ecosystem collapse and more frequent and severe weather. Rising temperatures from human-caused greenhouse gas emissions affects planet-wide systems in various ways.The potential future effects of global climate change include more frequent wildfires, longer periods of drought in some regions, and an increase in the wind intensity and rainfall from tropical cyclones.More frequent and intense drought, storms, heat waves, rising sea levels, melting glaciers and warming oceans can directly harm animals, destroy the places they live, and wreak havoc on people's livelihoods and communities. As climate change worsens, dangerous weather events are becoming more frequent or severe.
+                </p>
+                <br><br>
+            </article>
+            <article>
+                <img src="Images/Content/Issue.png" alt="Issues">
+            </article>
+        </section>
+
+    <h1 id="Causes"><span>WHAT ARE THE CAUSES OF CLIMATE CHANGE?</span></h1>
+        <section>
+            <article>
+                <ol>
+                    <li>Generating Power - Generating electricity and heat by burning fossil causes a large chunk of global emissions</li>
+                    
+                    <li>Manufacturing Goods - Manufacturing and industry produce emissions, mostly from burning fossil fuels to produce energy for making things like cement, iron, steel, electronics, plastics, clothes, and other goods.</li>
+            
+                    <li>Cutting Down Of Forest - Cutting down forests to create farms or pastures, or for other reasons, causes emissions, since trees, when they are cut, release the carbon they have been storing. </li>
+            
+                    <li>Using Transportation - Most cars, trucks, ships, and planes run on fossil fuels. That makes transportation a major contributor of greenhouse gases, especially carbon-dioxide emissions.</li>
+            
+                    <li>Producing Foods - Producing food causes emissions of carbon dioxide, methane, and other greenhouse gases in various ways.</li>
+
+                    <li>Powering Building - Globally, residential and commercial buildings consume over half of all electricity. As they continue to draw on coal, oil, and natural gas for heating and cooling, they emit significant quantities of greenhouse gas emissions. </li>
+                </ol>
+            </article>
+        </section>
+            
+        <h1 id="Effects"><span>WHAT ARE THE EFFECTS OF CLIMATE CHANGE?</span></h1>
+        <section>
+            <article>
+                <ol>
+                    <li>Hotter temperatures - As greenhouse gas concentrations rise, so does the global surface temperature. The last decade, 2011-2020, is the warmest on record. Since the 1980s, each decade has been warmer than the previous one.</li>
+            
+                    <li>More severe storms - Destructive storms have become more intense and more frequent in many regions. As temperatures rise, more moisture evaporates</li>
+            
+                    <li>Increased drought - Climate change is changing water availability, making it scarcer in more regions. </li>
+            
+                    <li>A warming, rising ocean - The ocean soaks up most of the heat from global warming.</li>
+            
+                    <li>Loss of species - Climate change poses risks to the survival of species on land and in the ocean.</li>
+            
+                    <li>More health risks - Climate change is the single biggest health threat facing humanity. </li>
+                </ol>        
+            </article>
+        </section>
+
+        <h1 id="Solutions"><span>SOLUTIONS FOR CLIMATE CHANGE</span></h1>
+        <section>
+            <article>
+                <p>
+                   Many climate change solutions can deliver economic benefits while improving our lives and protecting the environment. We also have global frameworks and agreements to guide progress, such as the Sustainable Development Goals, the UN Framework Convention on Climate Change and the Paris Agreement. Three broad categories of action are: cutting emissions, adapting to climate impacts and financing required adjustments. Switching energy systems from fossil fuels to renewables like solar or wind will reduce the emissions driving climate change. But we have to act now. While a growing number of countries is committing to net zero emissions by 2050, emissions must be cut in half by 2030 to keep warming below 1.5°C. Achieving this means huge declines in the use of coal, oil and gas: over two-thirds of today’s proven reserves of fossil fuels need to be kept in the ground by 2050 in order to prevent catastrophic levels of climate change.
+                </p>
+            </article>
+            <article>
+                <img src="Images/Content/Solution.jpg" alt="Solutions">
+            </article>
+        </section>
+    
+    </main>
+    <footer>&copy; Copyright 2023 - BrainWaveScience.com - Created by Devesh and Vignesh.</footer>
+
+</body>
+</html>

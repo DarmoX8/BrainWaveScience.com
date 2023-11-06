@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Science</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/Favicon.png" type="image/png">
+    <script defer src="script.js"></script>
+    <style>
+        main h3{display: inline;}
+        li{margin-bottom: 20px;}
+        li::marker{font-size: 23px;}
+    </style>
+</head>
+
+<body>
+    <div id="SearchResult">
+        <div>
+            <h3>Search result of "<span id="input"></span>". Click on it to go to the page.</h3>
+            <h3 id="Result"></h3>
+            <button class="btn" id="SearchButton" onclick="Close()">Go Back</button>
+        </div>
+    </div>
+    <input type="checkbox" id="input_toggle">
+    <label for="input_toggle" id="toggler"><img src="Images/Navigator.png" draggable="false" alt="Navigation Bar Toggler"></label>
+    <nav>
+        <div id="brand">
+            <img src="Images/Logo.png" id="navbar-img" draggable="false" alt="Logo">
+            <a id="header" href="index.html">BrainWaveScience.com</a>
+        </div>
+        <!-- DT stands for Dropdown Toggler -->
+        <input type="checkbox" id="Input_DT">
+        <label for="Input_DT" id="DT">Science <span id="triangle"></span></label>
+        <div id="dropdown">
+            <a href="Biology.html" class="dropdown_item">Biology</a>
+            <a href="Physics.html" class="dropdown_item">Physics</a>
+            <a href="Chemistry.html" class="dropdown_item">Chemistry</a>
+            <a href="Environment.html" class="dropdown_item">Environment</a>
+        </div>
+        <a href="About.html">About Us</a>
+        <form>
+            <input type="search" placeholder="Search Here" id="searchbar">
+            <button class="btn" onclick="search(event)">Search</button>
+        </form>
+    </nav>
+    <div id="slider">
+        <div id="slides">
+            <!-- Buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5"> <!-- All names should be same so html knows only one of these should be selected. -->
+            <!-- Slide Images -->
+            <div class="slide first"><img src="Images/Banner/Banner1.png" alt="Science" draggable="false" id="image"></div>
+            <div class="slide"><img src="Images/Banner/Banner2.png" alt="Physics" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner3.png" alt="Chemistry" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner4.png" alt="Biology" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner5.png" alt="Environment" draggable="false"></div>
+            <!-- Automatic Navigation -->
+            <div class="navigation-auto">
+                <div id="auto-btn1"></div>
+                <div id="auto-btn2"></div>
+                <div id="auto-btn3"></div>
+                <div id="auto-btn4"></div>
+                <div id="auto-btn5"></div>
+            </div>
+            <!-- Manual Navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio2" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio3" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio4" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio5" class="manual-btn" onclick="reset_timer()"></label>
+            </div>
+            <!-- Arrow Navigation -->
+            <div class="arrows">
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+            </div>
+        </div>
+    </div>
+    
+
+    <main>
+        <h1><span>INTRODUCTION</span></h1>
+        <section>
+            <article>
+                <p>
+                    Science is the pursuit and application of knowledge and understanding of the natural and social world following a systematic methodology based on evidence. Science is divide into 3 types as Biology, Physics and Chemistry. Adding this there is Environmental Science which help us to know about the climate change.
+                </p>
+
+                <ol>
+                    <li> 
+                        <h3><span>Biology Subtopics:</span></h3> Respiration, Plants, Photosynthesis, Heterotrophic Mode of Nutrition in Plants.
+
+                    </li>
+                    <li> 
+                        <h3><span>Physics Subtopics:</span></h3> Measurement, Motion, Speed, Heat, Temperature, Types of Temperature, Light, Mirror, Types of Mirrors, Electricity and Conductors and Insulators.
+                    </li>
+                    <li> 
+                        <h3><span>Chemistry Subtopics:</span></h3> Matter, States of Matter, Changes, Chemical Reaction and Separation of Substances.
+
+                    </li>
+                    <li> 
+                        <h3><span>Environment Subtopics:</span></h3> Climate Change, Causes of Climate Change, Effects of Climate Change and Solution of Climate Change
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <img src="Images/Content/Home.png" alt="Science" width="">
+            </article>
+        </section>
+
+    </main>
+
+    <footer>&copy; Copyright 2023 - BrainWaveScience.com - Created by Devesh and Vignesh.</footer>
+
+</body>
+</html>

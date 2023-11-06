@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Biology</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/Favicon.png" type="image/png">
+    <script defer src="script.js"></script>
+    <style>
+        td{border: 0; border-bottom: 3px solid black; padding-right: 20px; background: skyblue; text-align: center;}
+    </style>
+</head>
+
+<body>
+    <div id="SearchResult">
+        <div>
+            <h3>Search result of "<span id="input"></span>". Click on it to go to the page.</h3>
+            <h3 id="Result"></h3>
+            <button class="btn" id="SearchButton" onclick="Close()">Go Back</button>
+        </div>
+    </div>
+    <input type="checkbox" id="input_toggle">
+    <label for="input_toggle" id="toggler"><img src="Images/Navigator.png" draggable="false" alt="Navigation Bar Toggler"></label>
+    <nav>
+        <div id="brand">
+            <img src="Images/Logo.png" id="navbar-img" draggable="false" alt="Logo">
+            <a id="header" href="index.html">BrainWaveScience.com</a>
+        </div>
+        <!-- DT stands for Dropdown Toggler -->
+        <input type="checkbox" id="Input_DT">
+        <label for="Input_DT" id="DT">Science <span id="triangle"></span></label>
+        <div id="dropdown">
+            <a href="Biology.html" class="dropdown_item">Biology</a>
+            <a href="Physics.html" class="dropdown_item">Physics</a>
+            <a href="Chemistry.html" class="dropdown_item">Chemistry</a>
+            <a href="Environment.html" class="dropdown_item">Environment</a>
+        </div>
+        <a href="About.html">About Us</a>
+        <form>
+            <input type="search" placeholder="Search Here" id="searchbar">
+            <button class="btn" onclick="search(event)">Search</button>
+        </form>
+    </nav>
+    <div id="slider">
+        <div id="slides">
+            <!-- Buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5"> <!-- All names should be same so html knows only one of these should be selected. -->
+            <!-- Slide Images -->
+            <div class="slide first"><img src="Images/Banner/Banner1.png" alt="Science" draggable="false" id="image"></div>
+            <div class="slide"><img src="Images/Banner/Banner2.png" alt="Physics" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner3.png" alt="Chemistry" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner4.png" alt="Biology" draggable="false"></div>
+            <div class="slide"><img src="Images/Banner/Banner5.png" alt="Environment" draggable="false"></div>
+            <!-- Automatic Navigation -->
+            <div class="navigation-auto">
+                <div id="auto-btn1"></div>
+                <div id="auto-btn2"></div>
+                <div id="auto-btn3"></div>
+                <div id="auto-btn4"></div>
+                <div id="auto-btn5"></div>
+            </div>
+            <!-- Manual Navigation -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio2" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio3" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio4" class="manual-btn" onclick="reset_timer()"></label>
+                <label for="radio5" class="manual-btn" onclick="reset_timer()"></label>
+            </div>
+            <!-- Arrow Navigation -->
+            <div class="arrows">
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Left_Arrow" onclick="Slide(-1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+                <button class="Right_Arrow" onclick="Slide(1)"></button>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <h1 id="Respiration"><span>INTRODUCTION</span></h1>
+        <section>
+            <article>
+                <p>
+                    All living organisms need energy to perform their day-to-day activities and to carry out various processes of their body. Energy is also required for growth, development, repair and maintenance of the body. 
+                    We need energy even when we are sleeping. 
+                    How do living organisms obtain this energy?
+                    The food we eat is the source of energy. 
+                    Inside the cells, the digested food is burnt and the energy is released. 
+                    The process of burning of food to release energy requires oxygen.
+
+                    This products such as carbon dioxide and water are released in this process. 
+                    This process in which food is broken down in the presence of oxygen to release energy, carbon dioxide and water vapour is called respiration.
+                    Respiration is an essential characteristic of living beings.
+                </p>
+            </article>
+        </section>
+
+        <h1 id="Steps_in_Respiration"><span>STEPS OF RESPIRATION</span></h1>
+        <section>
+            <article>
+                <p>
+                    The two steps involved in the process of respiration are breathing and cellular respiration.
+                </p>
+                <ol>
+                    <li>
+                        <h3><span>Breathing</span></h3>
+                        <p>
+                            The process of taking in oxygen-rich air and giving out carbon dioxide-rich air is called breathing. 
+                            It is also called external respiration. 
+                            The taking in of air is called inhalation and giving out of air is called exhalation.
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>Cellular Respiration</span></h3>
+                        <p>
+                            It is the process in which oxygen is used to burn food and carbon dioxide is released along with water and energy. As this process takes place within the cells of our body, it is known as cellular respiration or internal respiration. 
+                            During respiration, the digested food in the form of glucose reacts with oxygen. 
+                            This reaction can be represented by a given chemical equation.
+                        </p>
+                    </li>
+                </ol>
+                <table>
+                    <tr>
+                        <td>Glocose (Sugar)</td>
+                        <td>+</td>
+                        <td>Oxygen</td>
+                        <td>→</td>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Water</td>
+                        <td>+</td>
+                        <td>Energy</td>
+                    </tr>
+                    <tr>
+                        <td>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></td>
+                        <td>+</td>
+                        <td>O<sub>2</sub></td>
+                        <td>→</td>
+                        <td>CO<sub>2</sub></td>
+                        <td>+</td>
+                        <td>H<sub>2</sub>O</td>
+                        <td>+</td>
+                        <td>Energy</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <h1 id="Respiration_in_Humans"><span>RESPIRATION IN HUMAN BEINGS</span></h1>
+        <section>
+            <p>
+                In humans, respiration takes place through a complex system of organs.
+                These organs collectively make the respiratory system.
+            </p>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Human Respiratory System</span></h2>
+                <p>
+                    The parts of the human respiratory system are nostrils, nasal cavity, pharynx, trachea, and lungs.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <ol>
+                    <li>
+                        <h3><span>Nostrils and Nasal Cavity</span></h3>
+                        <p>
+                            The nostrils are external openings to let the air into the nasal cavity. Air is passed from nostrils through the nasal cavity. The hair present in the nostrils acts as a filter against germs. The blood circulating through the nose warms the inhaled air. This clean substance called mucus, present in the nasal cavity, moistens the air and traps any dust particles present in the inhaled air. A slimy, moist, and warm air then passes through the nasal cavity.
+                        </p>
+                    </li>
+
+                    <li>
+                        <h3><span>Pharynx</span></h3>
+                        <p>
+                            Pharynx is the region after the nasal cavity that leads into the trachea.
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>Trachea</span></h3>
+                        <p>
+                            It is the common passageway of the esophagus and windpipe. It is guarded by an opening called the glottis, which gets covered by the epiglottis.
+                            <br><br>
+                            The trachea leads into the voice box or larynx containing vocal cords that vibrate when air passes through them. The trachea later divides into two tubes called bronchi (singular: bronchus), which enter into the lungs. Each bronchus further divides into tiny branches called bronchioles. Bronchioles terminate into tiny air sacs called alveoli (singular: alveolus), which give the appearance of a bunch of grapes. The alveoli provide a larger surface area for easy and faster exchange of gases. The walls of alveoli are very thin. Diffusion of gases takes place through these walls. Alveoli have a rich supply of blood through a dense network of capillaries present around them.
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>Lungs</span></h3>
+                        <p>
+                            Lungs are the main respiratory organs and are located on both sides of the chest cavity. The air travels from nostrils to lungs through the nasal cavity, pharynx, and trachea. It finally reaches the lungs through bronchi. The lungs are pink in color and spongy due to the presence of air spaces and a large number of blood capillaries filled with blood. The lungs are protected in the rib cage and supported by a large flat muscle at the floor of the chest cavity called the diaphragm.
+                        </p>
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <img src="Images/Content/Respiratory System of Humans.png" alt="Respiratory System of Humans">
+                <img src="Images/Content/Breathing.gif" alt="Breathing GIF">
+                <img src="Images/Content/Alveoli.gif" alt="Alveoli GIF">
+                <img src="Images/Content/Rib Cage.gif" alt="Rib Cage">
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Mechanism of Breathing in Human Beings</span></h2>
+                <p>Breathing is a physical process that involves inhalation and exhalation. Before we learn about the mechanism of breathing, let us first perform a simple activity to study the functioning of the respiratory system.</p>
+                <iframe src="https://www.youtube.com/embed/fybV8zIGyu8?end=75" title="Model of Lungs" allowfullscreen></iframe>
+            </article>
+        </section>
+
+        <section>
+            <p>
+                During inhalation, the diaphragm moves downwards, and the chest cavity moves outwards, creating space for air to enter the lungs. When the diaphragm moves upwards and ribs move downward and inward, the chest cavity is reduced, and air, in turn, is pushed out. This is called exhalation. This expansion and relaxation of the lungs during breathing also cause a slight visible movement in the abdominal area.
+                <br><br>
+                The number of times air is inhaled or exhaled in a minute is termed breathing rate. It increases with an increase in physical activity.  The average rate of breathing in a man at rest position is 15-20 per minute.)
+            </p>
+            <img src="Images/Content/Mechanism in Breathing.gif" alt="Mechanism in Breathing">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Exchange of Gases</span></h2>
+                <p>
+                    The exchange of gases (oxygen and carbon dioxide) takes place in alveoli.
+                    When we inhale oxygen-rich air, the amount of oxygen present in alveoli is more than the blood present in the surrounding capiliaries. 
+                    Thus, oxygen diffuse air in alveoli to the blood in capillaries. 
+                    Similarly, the blood present in surrounding capillaries has more carbon dioxide than the air present in the alveoli. 
+                    Thus, carbon dioxide moves from capillary blood to the air present in the alveoli.
+                </p>    
+            </article>
+            <img src="Images/Content/Alveoli Inside.gif" alt="Alveoli Inside">
+        </section>
+
+        <section>
+            <alveoli>
+                <p><br>Let us perform an activity to prove that exhaled air is rich in carbon dioxide.</p>
+                <iframe src="https://www.youtube.com/embed/QR6GsydYUSI?end=55" title="Test for Carbon Dioxide is in Exhaled Air" allowfullscreen></iframe>
+            </alveoli>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Cellular Respiration</span></h2>
+                <p>
+                    The oxygen absorbed by the blood binds with haemoglobin, a protein present in the blood and forms oxyhaemoglobin. 
+                    It is transported in this form to the different parts of the body. 
+                    It is realesed in the cells where it is used for cellular resoiration.
+                    In cellular respiration, oxygen reacts with glucose to form carbon dioxide and water. 
+                    Energy is realesed in this process.
+                    The carbon dioxide formed durinng respiration is carried by the blood to the lungs to be expelled out of the body during exhalation.
+                    The chemical equation of cellular respiration can be represented as follows:
+                </p>
+                <table>
+                    <tr>
+                        <td>Glocose</td>
+                        <td>+</td>
+                        <td>Oxygen</td>
+                        <td>→</td>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Water</td>
+                    </tr>
+                    <tr>
+                        <td>C<sub>6</sub>H<sub>12</sub>O<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6O<sub>2</sub></td>
+                        <td>→</td>
+                        <td>6CO<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6H<sub>2</sub>O</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <h1 id="Types_of_Respiration"><span>TYPES OF RESPIRATION</span></h1>
+        <section>
+            <article>
+                In most of the organisms, oxygen is required for respiration, but some organisms such as yeast and some bacteria do not use oxygen for respiration. 
+                Thus, respiration is of two types aerobic respiration (presence of air) and anaerobic respiration (absence of air).
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Aerobic Respiration</span></h2>
+                <p>
+                    The respiration which is carried out in the presence of oxygen is called aerobic respiration. 
+                    In this process, glucose formed after digestion combines with the inhaled oxygen. 
+                    Glucose then breaks down into carbon dioxide and water, and releases energy. 
+                    This type of respiration is carried out by almost all plants and animals.
+                    The chemical equation of aerobic respiration can be represented as follows:
+                </p>
+                <table>
+                    <tr>
+                        <td>Glocose</td>
+                        <td>+</td>
+                        <td>Oxygen</td>
+                        <td>→</td>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Water</td>
+                    </tr>
+                    <tr>
+                        <td>C<sub>6</sub>H<sub>12</sub>O<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6O<sub>2</sub></td>
+                        <td>→</td>
+                        <td>6CO<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6H<sub>2</sub>O</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Anaerobic Respiration</span></h2>
+                <p>
+                    The respiration which is carried out in the absence of oxygen is called anaerobic respiration. 
+                    In this process, the sugar breaks down into carbon dioxide and alcohol with the production of energy. 
+                    The amount of energy released here is much less as compared to aerobic respiration.
+                    Several bacteria and fungi, such as yeast, can respire anaerobically. 
+                    Yeast is therefore also used in wine and beer industries.
+
+                    The chemical equation of anaerobic respiration can be represented as follows:
+                </p>
+                <table>
+                    <tr>
+                        <td>Glocose</td>
+                        <td>→</td>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Lactic Acid</td>                        
+                        <td>+</td>
+                        <td>Energy</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h3><span>Anaerobic Respiration in Humans</span></h3>
+                <p>
+                    Anaerobic respiration may also occur in the muscle cells of our arms and legs.
+                    It is also called fermentation.
+                    While performing a physical activity like running, the body muscles need a lot of energy for which they respire fast but do not get sufficient oxygen. 
+                    In such situations, anaerobic respiration takes place in our muscle cells.
+                    Under normal conditions, the muscle cells of our body respire aerobically.
+                    They are not always respiring anaerobically. 
+                    It is only under special conditions when oxygen is lacking that our muscles start respiring anaerobically.
+                    But here, instead of alcohol, lactic acid is produced (CO, is not produced), which accumulates in the muscles. 
+                    This is the reason why we get cramps. 
+                    As and when the lactic acid breaks down slowly, we start to feel comfortable again.
+                </p>
+                <table>
+                    <tr>
+                        <td>Glocose</td>
+                        <td>→</td>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Lactic Acid</td>                        
+                        <td>+</td>
+                        <td>Energy</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <h1 id="Respiration_in_Other_Animals_and_Plants"><span>RESPIRATION IN OTHER ANIMALS AND PLANTS</span></h1>
+        <section>
+            <article>
+                <p>
+                    Different animals, either microorganisms or higher animals, have different organs and mechanisms of breathing. 
+                    Let us discuss different mechanisms of respiration in different organisms.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Respiration Through Skin</span></h2>
+                <p>
+                    There are some organisms that respire through their body surface, for example, Amoeba, Euglena, and Paramecium. 
+                    They take oxygen directly from the surroundings. Oxygen and carbon dioxide diffuse in and out through the outer cell membrane or the body surface.
+                    In earthworm and leech, the skin is moist and helps in the exchange of gases. Gaseous exchange through the skin is also known as cutaneous respiration.
+                </p>
+            </article>
+            <img src="Images/Content/Worm Skin.png" alt="Respiration in Worms">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Respiration Through Air Holes</span></h2>
+                <p>
+                    Insects such as cockroach and grasshopper have a tracheal system running all along their body. 
+                    The air tubes called trachea open through small openings called spiracles for exchange of gases. 
+                    Insects lead a very active life and need more amount of oxygen. 
+                    The tracheal system provides them with sufficient oxygen.
+                </p>
+            </article>
+            <img src="Images/Content/Respiration in Cockroach.png" alt="Respiration in Cockroach">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Respiration Through Gills</span></h2>
+                <p>
+                    Fishes and other aquatic organisms take in the oxygen dissolved in water and give out carbon dioxide directly in water. 
+                    To do so, they have special organs for respiration called gills. 
+                    Gills are covered by the operculum. 
+                    Numerous thin filaments are present inside gills.
+                    These filaments are surrounded by a dense network of capillaries around them.
+                    Exchange of gases takes place through these capillaries. 
+                    Operculum allows water to enter and pass over the gills to give oxygen and receive carbon dioxide.
+                    Finally, the water passes out from the operculum.
+                </p>
+            </article>
+            <img src="Images/Content/Respiration in Fish.png" alt="Respiration in Fish">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Respiration Through Lungs</span></h2>
+                <p>
+                    Birds breathe with the help of lungs present in their chest cavity. 
+                    They have air-filled sacs near the lungs. 
+                    The air sacs make the body of birds lighter, which help them to fly. Mammals also have highly developed lungs for gaseous exchange.
+                    <br><br>
+                    Amphibians such as frogs and toads have a dual system of frog mode of breathing. 
+                    They have a soft and moist skin, which is supplied with blood capillaries. 
+                    When hibernating, frogs take oxygen through their skin by diffusion.
+                    Frogs breathe through gills when they are tadpoles, but as they mature, they develop lungs. 
+                    Frogs respire through lungs on land.
+                </p>
+            </article>
+            <img src="Images/Content/Respiration in Frogs.jpeg" alt="Respiration in Frogs">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Respiration in Plants</span></h2>
+                <p>
+                    Plants are also living organisms that carry out various life processes such as growth, transportation of materials and photosynthesis for which they need energy. 
+                    To obtain energy, plants also respire. 
+                    Each part of plant respires individually. 
+                    The stomata (singular: stoma), which help in photosynthesis, also help in the respiration process. 
+                    The stomata consist of two bean-shaped cells called guard cells, which allow the opening and closing of the stomatal pore to take in oxygen.
+                    Woody stems have small openings on their bark called lenticels for breathing.
+                    Roots of plants also breathe with the help of root hair. 
+                    Farmers turn the soil and in the soil particles by diffusion.
+                </p>
+            </article>
+            <img src="Images/Content/Respiration in Plants.jpg" alt="Respiration in Plants" height="200px">
+        </section>
+
+
+        <h1 id="Plants"><span>PLANTS</span></h1>
+        <section>
+            <article>
+                <p>
+                    All living organisms need food to sustain. 
+                    The process of intake of food and its proper utilisation in the body is termed as nutrition.
+                    Components of food such as carbohydrates, fats, proteins, vitamins and minerals are called nutrients. 
+                    Living organisms broadly exhibit two modes of nutrition- autotrophic (auto = self; trophic = to feed) and heterotrophic (hetero = another; trophic = to feed).
+                </p>
+                <h2><span>Autotrophic Mode Of Nutrition</span></h2>
+                <p>
+                    The made of nutrition in which an organism synthesis its on food using simple mabstances is called autotrophic mode of nutrition. 
+                    Organisms that exhibit this kind of nutrition are called autotrophs. 
+                    The green plants are autotrophs as they prepare their own food using carbon dioxide, sunlight, water and minerals. 
+                    They are also called producers as they produce
+                    food for other living organisms.
+                </p>
+            </article>
+        </section>
+
+        <h1 id="Photosynthesis"><span>Photosynthesis</span></h1>
+        <section>
+            <article>
+                <p>
+                The process by which plants prepere their own food is called photosynthesis. 
+                It is the proces by which plants produce glucose by utilising carbon dioxide, water, sunlight (solor energy).
+                <br>
+                The leaves of plants contain a green pigment called chlorophyll. 
+                This pigment imparts green colour to the plants and traps the solar energy. 
+                Plants take in carbon dioxide from the surrounding air. 
+                Water and minerals are absorbed by the roots and transported to the site of photosynthesis. 
+                Leaves are the main site of photosynthesis in plants.
+                </p>
+            </article>
+            <img src="Images/Content/Photosynthesis.webp" alt="Photosynthesis">
+        </section>
+        <section>
+            <article>
+                <p>
+                Plants use solar energy to convert carbon dioxide and water into glucose and oxygen.
+                This oxygen is released into the air.
+                The glucose is stored in the form of starch in leaves and in other parts of the plant.
+                Goth glucose and starch are forms of carbohydrate.
+                The presence of starch in a leaf verifies the occurrence of photosynthesis.
+                <br><br>
+                An activity is given below that shows how to test the presence of starch in a leaf.
+                </p>
+                <iframe width="900" height="500" src="https://www.youtube.com/embed/0s_xZqvwm_s?&start=16&end=128" title="Use iodine to test a leaf for starch" allowfullscreen></iframe>
+            </article>
+        </section>
+        <section>
+            <article>
+                <p>
+                The photosynthesis can be represented by following equation.
+                </p>
+                <table>
+                    <tr>
+                        <td>Carbon Dioxide</td>
+                        <td>+</td>
+                        <td>Water</td>
+                        <td>→</td>
+                        <td>Glocose</td>
+                        <td>+</td>
+                        <td>Oxygen</td>
+                    </tr>
+                    <tr>
+                        <td>6CO<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6H<sub>2</sub>O</td>
+                        <td>→</td>
+                        <td>C<sub>6</sub>H<sub>12</sub>O<sub>2</sub></td>
+                        <td>+</td>
+                        <td>6O<sub>2</sub></td>
+                    </tr>
+                </table>
+                <p>
+                The food prepared by green plants is used by all other living organisms.
+                Photosynthesis also helps in maintaining the ratio of oxygen and carbon dioxide in the atmosphere. 
+                Thus, plants are vital for maintaining life.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Conditions essential for Photosynthesis</span></h2>
+                <p>
+                    <h3 style="display: inline;"><span>Sunlight:</span></h3> Sun is the ultimate source of energy for all organisms. Photosynthesis cannot take place in the absence of sunlight. 
+                    Let us perform an experiment to justify the importance of sunlight for photosynthesis.
+                </p>
+                <iframe src="https://www.youtube.com/embed/Yqo6-qDQoMA" title="To show that Sunlight is Necessary for Photosynthesis" allowfullscreen></iframe>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <p>
+                    <h3 style="display: inline;"><span>Chlorophyll:</span></h3> 
+                    The leaves of plants have structures called chloroplasts. 
+                    The green pigment chlorophyll is present in chloroplasts. 
+                    This pigment is capable of trapping solar energy which in turn is used to prepare glucose. 
+                    Not all leaves that do photosynthesis are green. Some leaves contain carotenoids and phycobilins that cover chlorophyll and impart different colours.
+                    Let us perform an activity to show that chlorophyll is essential for photosynthesis. (Note: use a variegated leaf i.e. leaves from money plant, ect...)
+                    <iframe src="https://www.youtube.com/embed/_bg32xXpfxQ?&start=183&end=243" title="To Show that Chlorophyll is Necessary for Photosynthesis"></iframe>
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <p>
+                    <h3 style="display: inline"><span>Carbon Dioxide:</span></h3> 
+                    Carbon dioxide: Carbon dioxide, present in air, is taken in by plants through small openings called stomata (singular: stoma). 
+                    The stomata also help the plants to respire. 
+                    They are present in abundance on the lower surface of leaves.
+                    Each stoma is surrounded by two guard cells. 
+                    These guard cells control the opening and closing of stomata.
+                    <iframe src="https://www.youtube.com/embed/mRUE8esVCfs" title="To Show that Carbon Dioxide is Necessary for Photosynthesis"></iframe>
+                </p>
+            </article>
+        </section>
+        <section>
+            <article>
+            <p>
+                <h3 style="display: inline;"><span>Water and minerals:</span></h3> 
+                The roots of plants absorb water and minerals dissolved in the soil with the help of root hair. 
+                They are also essential for photosynthesis. 
+                Water and minerals from the soil are absorbed by the root hair and transported to the leaves through a tissue called xylem. 
+                Xylem is tube-like structure.
+            </p>
+            </article>
+            <img src="Images/Content/Leaf Structure.png" alt="Leaf Structure">
+            <br>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Synthesis of plant food other than carbohydrates</span></h2>
+                <p>
+                    Plants synthesise carbohydrates (glucose) through the process of photosynthesis.
+                    Carbohydrates are made of carbon, hydrogen and oxygen. 
+                    These are used to synthesise other components of food such as proteins and fats. 
+                    But proteins also contain nitrogen. 
+                    From where do plants obtain this nitrogen? 
+                    This nitrogen is obtained by plants from the soil. 
+                    The nitrogen present in the air cannot be used as such by plants. 
+                    There are some bacteria present in the soil that convert this gaseous nitrogen into a form that can be easily absorbed and utilised by plants.
+                    Such bacteria are called nitrogen-fixing bacteria, for example, Rhizobium.
+                </p>
+            </article>
+        </section>
+
+        <br><br><br>
+        <h1 id="Heterotrophic"><span>HETEROTROPHIC MODE OF NUTRITION</span></h1>
+        <section>
+            <article>
+                <p>
+                    Some living organisms depend on other living organisms for food. 
+                    These organisms have heterotrophic mode of nutrition and are called heterotrophs. 
+                    All animals including humans and the plants that cannot carry out photosynthesis are heterotrophs. 
+                    Monotropa and Cuscuta are examples of heterotrophic plants. 
+                    Let us study different types of heterotrophic plants.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Parasitic Plants</span></h2>
+                <p>
+                    These heterotrophic plants have parasitic mode of nutrition. 
+                    In this mode of nutrition, a plant lives on another living plant and derives its nutrition from the latter. 
+                    The plant that derives nutrition, is called a parasite. 
+                    The plant from which the parasite derives its nutrition is called a host.
+
+                    Some examples of parasitic plants are Cuscuta (or dodder) and Rafflesia.
+                    Cuscuta is a pale yellow twining plant often seen on tree tops. 
+                    It twins over the host and absorbs its nutrients using certain special roots. 
+                    Rafflesia is a parasitic plant found in the forests of Malaysia. 
+                    It has the biggest and the heaviest flower.
+                    There are certain plants that are partial parasites, for example Mistletoe.
+                    These plants can prepare their own food but depend on other plants
+                    or host for water and minerals. 
+                </p>
+            </article>
+            <img src="Images/Content/Rafflesia.jpeg" alt="Rafflesia" style="height: 300px;">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Insectivores Plants</span></h2>
+                <p>
+                    These plants feed on insects by trapping and digesting them. 
+                    Some examples of insectivorous plants are pitcher plant, Venus fly trap, sundew and bladderwort. 
+                    Most of these plants are found in the environment where nitrogen is not readily available. 
+                    They use insect protein as a source of nitrogen. This
+                    is a kind of holozoic nutrition.
+                    
+                    Insectivorous plants can photosynthesise. 
+                    Yet, they feed on insects to fulfill their requirement of nitrogen. 
+                    They synthesise carbohydrates through photosynthesis only.
+
+                    <br><br>
+                    The leaves of a pitcher plant are modified into a pitcher-like structure. 
+                    The tip of the leaf forms a lid to the pitcher. 
+                    The insect trapped in the pitcher plant is directed down by the hair in the pitcher. 
+                    There the insect is digested by the enzymes present in the juices inside the pitcher.
+                </p>
+            </article>
+            <article>
+                <img src="Images/Content/Pitcher Plant.avif" alt="Pitcher Plant">
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Saprophytic Plants</span></h2>
+                <p>
+                    Some plants derive nutrition from dead and decaying organic matter (dead plants and animals). 
+                    Such plants are called saprophytes and this mode of nutrition is called saprophytic. 
+                    Examples of saprophytes are Monotropa, mushrooms and bread moulds. 
+                    The saprophytes release digestive juices on the dead and decaying matter. 
+                    These juices act upon and convert organic matter into liquid form (simpler substances). 
+                    These organisms then again absorb this liquid and obtain nutrition from it.
+                </p>
+            </article>
+            <img src="Images/Content/Mushroom.jpg" alt="Mushroom">
+        </section>
+
+        <section>
+            <article>
+                <h2><span>Symbiotic Plants</span></h2>
+                <p>
+                    Symbiotic relationship is a close association of two different organisms. 
+                    In this association, two organisms may mutually benefit from each other. 
+                    They actually get nourishment from each other. 
+                    An example of such a relationship is lichen, which is an association between algae and fungi. 
+                    Algae, being an autotroph, synthesise food. 
+                    Fungi, being saprophytic, absorb water and minerals and supply to the algal partner along with the shelter.
+                </p>
+            </article>
+            <img src="Images/Content/Lichen.jpg" alt="Lichen">
+        </section>
+
+        <section>
+            <article>
+                <h3><span>Symbiotic association helps to replenish the soil</span></h3>
+                <p>
+                    Symbiotic association is extremely helpful to the farmers. 
+                    Soil provides many minerals to the plant (such as phosphorus, potassium and nitrogen). 
+                    Among all the nutrients, nitrogen is very important for the growth of the plant as well as for the synthesis of proteins. 
+                    Plants cannot utilise the atmospheric nitrogen. 
+                    Certain microbes such as Rhizobium can convert atmospheric nitrogen into a form that can be easily used by plants. 
+                    This bacterium gets associated with the roots of leguminous plants such as peas, beans and gram. 
+                    The plant, provides food and shelter to the bacterium. 
+                    Rhizobium fixes nitrogen for the plant and thus helps in replenishing the nutrient in the soil. 
+                    That is why, farmers grow a leguminous crop in between two main crops to maintain the fertility of the soil.
+                </p>
+            </article>
+            <img src="Images/Content/Rhizobium.jpg" alt="Rhizobium">
+        </section>
+
+
+    </main>
+    <footer>&copy; Copyright 2023 - BrainWaveScience.com - Created by Devesh and Vignesh.</footer>
+
+</body>
+</html>

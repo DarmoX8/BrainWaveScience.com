@@ -1,0 +1,486 @@
+/*-------------------------------Variables--------------------------------*/
+:root{  /* Almost same as the html tag but has more importance */
+    --font-size: 18px;
+    --padding: 9px 9px;
+    --nav-bgcolor: #1EACFF;
+    --nav-font-color: black;
+    --nav-hover-font-color: white;
+    --nav-hover-bgcolor: rgb(37, 168, 37);
+    --subtract-font-size: 0px;
+}
+
+::selection {
+    background: #17A600;  /* Change highlight background color */
+    color: #000;  /* Change highlight text color */
+}
+
+body{
+    margin: 0;
+    font-family: Comic Sans MS;
+    font-size: calc(19px - var(--subtract-font-size));
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: bold; /*400 weight is the same as normal, and 700 weight is the same as bold*/
+}
+
+h1,h2,h3,h4,h5,h6{font-style: normal; margin-bottom: 0;}
+h1{
+    font-size: calc(36px - var(--subtract-font-size)); 
+    text-decoration: underline; 
+    text-decoration-color: black;
+    background: rgb(52, 228, 52);
+    text-align: center;
+    border: 2px solid black;
+    margin: 10px;
+    margin-top: 30px;
+}
+h1:nth-of-type(1){margin-top: 0;}
+h2{font-size: calc(30px - var(--subtract-font-size));}
+h3{font-size: calc(24px - var(--subtract-font-size));}
+h5{font-size: calc(16px - var(--subtract-font-size));}
+p{margin: 0;}
+
+main a, #SearchResult a{
+    color: #1a0dab;
+    text-shadow: 0px 0px 25px white;
+    text-decoration: none;
+    background: rgb(52, 228, 52);
+}
+main a:hover, #SearchResult a:hover{
+    text-decoration: underline;
+    color: #4639d6;
+}
+
+main{
+    color: black;
+    text-shadow: 0px 0px 25px white;
+    background: url("Images/Background.png");
+    background-size: cover;
+    padding-bottom: 25px;
+}
+main>*{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer{
+    text-align: center;
+    background-color: #5e5e5e;
+}
+
+main img, #content img{
+    width: clamp(300px, 30vw, 30vw);
+    /* Clamp: (min, preferred, max)*/
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+span{background: rgb(52, 228, 52);}
+
+table{
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+td,th{border: 2px solid black;}
+th{background: skyblue;}
+td{background: #2F6DF9;}
+
+#about{display: flex;}
+
+section{
+    display: flex;
+    padding-inline: 100px;
+    gap: 10px;
+    width: auto;
+}
+section>*{
+    flex-grow: 1;
+}
+
+iframe{
+    width: 80%; 
+    height: 80vh;
+    display: block;
+}
+
+/*-------------------------------Searching System------------------------------------*/
+
+#SearchResult{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background: rgba(255, 255, 255, 0.500);
+    position: fixed;
+    z-index: 100;
+}
+#SearchResult>div{
+    background: white; 
+    height: 80vh;
+    width: clamp(80vw,80vw,300px);
+    padding: 15px;
+    margin: auto;
+    border: 1px solid rgba(0,0,0,.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]*/
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+  
+#SearchButton{
+    z-index: 101;
+    margin: 0;
+    margin-top: auto;
+}
+#SearchResult h5{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+/*-------------------------------Navbar--------------------------------*/
+/*-------------------------------Button Tag--------------------------------*/
+.btn{
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid darkgreen;
+    padding: 6px;
+    font-size: var(--font-size);
+    border-radius: 4px;
+    user-select: none; /* Text inside the button cannot be selected */
+    color: var(--nav-font-color);
+    background: limegreen;
+    margin-right: 3px;
+}
+.btn:hover{
+    color: #fff;
+    background: green;
+    border-color: hsl(120, 100%, 15%);
+}
+.btn:focus{ /*While clicking until clicking on something else*/
+    outline: 2px solid black;
+    outline-offset: -4px;
+    color: #fff;
+    background: rgb(0, 146, 0);
+    border-color: white;
+}
+.btn:active{   /*While clicking*/
+    box-shadow: 0 0 20px black;
+}
+
+  
+/*-------------------------------Form and input tag--------------------------------*/
+form{
+    margin-left: auto;
+    margin-top: 4px;
+}
+input{display: none;}
+#searchbar{
+    display: inline;
+    padding: 6px 12px;
+    font-size: var(--font-size);
+    color: #555;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#searchbar:focus{
+    box-shadow: 0 0 25px rgb(0, 0, 0);
+}
+  
+  
+/*-------------------------------Class="Dropdown"--------------------------------*/
+
+#dropdown{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--nav-bgcolor);
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transform: translate(106px, -106px);
+    z-index: -1;
+    overflow: hidden;
+}
+.dropdown_item{
+    padding: 3px 20px;
+    color: var(--nav-font-color);
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+}
+.dropdown_item:hover{
+    color: var(--nav-hover-font-color);
+    background: var(--nav-hover-bgcolor);
+    text-decoration: none;
+}
+.dropdown_item:active{background: blue;}
+
+
+/*-------------------------------Navbar--------------------------------*/
+nav{
+    position: fixed;
+    display: flex;
+    float: left;
+    width: 100%;
+    border: 1px solid black;
+    background: var(--nav-bgcolor);
+    font-weight: normal;
+    font-style: normal;
+    top: -1px;
+    z-index: 15;
+}
+#brand{
+    float: left;
+    height: 43px; /*important*/
+}
+#header{float:right !important;}
+
+#navbar-img{
+    width: 43px;
+    background: rgb(37, 168, 37);
+    margin-right: 10px;
+}
+
+nav>a,nav>label,#header{
+    color: var(--nav-font-color);
+    padding: var(--padding);
+    font-size: var(--font-size);
+    text-decoration: none;
+    transition: 0.5s;
+    float:left;
+}
+nav>a:hover,nav>label:hover,#header:hover{
+    color:var(--nav-hover-font-color);
+    background:var(--nav-hover-bgcolor);
+    text-decoration:none;
+}
+
+#triangle{
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    background: transparent;
+}
+
+#toggler{
+    position: fixed;
+    display: none;
+    background: hsl(120, 100%, 65%);
+    border: 2px solid black;
+    padding: 3px 6px;
+    margin-top: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 16;
+    right: 5px;
+    top: 0;
+}
+
+#input_toggle:checked ~ #toggler{
+    outline: 2px solid black;
+    outline-offset: -4px;
+    background: rgb(0, 146, 0);
+    border: 1px solid white;
+    box-shadow: 0 0 20px black;
+}
+
+#toggler>*{
+    width: 25px;
+    vertical-align: middle;
+}
+
+#input_toggle:checked ~ #toggler>*{width: 23px; padding-top: 1.5px}
+
+
+/*--------------------------------Banner-----------------------------------*/
+/*--------------------------------Setting Images-----------------------------------*/
+
+#slider{
+    width: 100%;
+    aspect-ratio: 15/6;
+    overflow: hidden;
+}
+#slides{
+    width: 500%;
+    aspect-ratio: 15/6;
+    display: flex;
+}
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+.slide img{
+    width: 100%;
+    aspect-ratio: 15/6;
+}
+
+
+/*Manual Slide Navigation*/
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 11;
+}
+
+.manual-btn{
+    padding: 5px;
+    border: 2px solid darkgreen;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.manual-btn:hover{background: green;}
+#radio1:checked ~ .first{margin-left: 0;}
+#radio2:checked ~ .first{margin-left: -20%;}
+#radio3:checked ~ .first{margin-left: -40%;}
+#radio4:checked ~ .first{margin-left: -60%;}
+#radio5:checked ~ .first{margin-left: -80%;}
+
+
+/*Automatic Slide Navigation*/
+.navigation-auto{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.navigation-auto div{
+    border: 2px solid darkgreen;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: hsla(120, 100%, 25%, 0.25);
+    transition: 1s;
+}
+
+#radio1:checked ~ .navigation-auto #auto-btn1,
+#radio2:checked ~ .navigation-auto #auto-btn2,
+#radio3:checked ~ .navigation-auto #auto-btn3,
+#radio4:checked ~ .navigation-auto #auto-btn4,
+#radio5:checked ~ .navigation-auto #auto-btn5{
+    background: green;
+}    
+
+/* Arrow Manual Slide Navigation */
+.arrows{
+    position: absolute;
+    width: calc(100vw - 32px);
+    margin-right: 7px;
+    margin-left: 7px;
+    display: flex;
+    align-items: center;
+}
+.arrows button:nth-of-type(3){margin-left: auto;}
+
+.arrows>*{
+    cursor: pointer;
+    border: solid white;
+    padding: 8px;
+    rotate: 45deg;
+    background-color: transparent;
+    opacity: 0.5;
+    transition: 0.7s;
+}
+.Left_Arrow{border-width: 0 0 7px 7px;}
+.Right_Arrow{border-width: 7px 7px 0 0;}
+.arrows>*:hover{opacity: 1;}
+
+@keyframes ToggleNav{
+    from {height: 39px;}
+    to {height: 153px;}
+}
+@keyframes ToggleDropdown{
+    from {transform: translate(263px, -97px);}
+    to {transform: translate(263px, 43px);}
+}
+@keyframes ToggleDropdown2{
+    from {transform: translate(226px, -97px);}
+    to {transform: translate(226px 39px);}
+}
+@keyframes ToggleDropdown3{
+    from {transform: translate(238px, -97px);}
+    to {transform: translate(238px, 38px);}
+}
+@keyframes ToggleDropdown4{
+    from {height: 0;}
+    to {height: 102px;}
+}
+
+/*--------------------------Computer code------------------------*/
+
+@media (width >= 1101px) and (hover: hover){
+    #DT:hover + #dropdown,#DT + #dropdown:hover{animation: ToggleDropdown 0.8s forwards;}
+}
+
+/*--------------------------Small Laptop code------------------------*/
+
+@media (1100px >= width >= 931px) and (hover: hover){
+    :root{
+        --subtract-font-size: 2px;
+        --font-size: 15px;
+    }
+
+    input{width: 20vw;}
+    #navbar-img{width: 38px;}
+    #brand{height: 39px;}
+    #slider{margin-top: 39px;}
+    #DT:hover + #dropdown,#DT + #dropdown:hover{animation: ToggleDropdown2 0.8s forwards;}
+}
+
+/*--------------------------Mobile/Tablet code------------------------*/
+
+@media (width <= 930px), (hover: none){
+    :root{
+        --subtract-font-size: 4px;
+        --font-size: 15px;
+    }
+    section{flex-direction: column; padding: 0;}
+
+    nav{height: 39px; flex-direction: column;overflow: hidden;}
+    #navbar-img{width: 38px;}
+    #brand{height: 38px;width: fit-content;}
+    nav>a,nav>label{margin-right: auto;}
+    #about{flex-direction: column;}
+
+    #searchbar{width: 170px;}
+    form{margin-left: 0;} 
+    #slider{margin-top: 39px;}
+
+    #toggler{display: inline;}
+    #input_toggle:checked ~ nav{overflow: hidden; animation: ToggleNav 0.8s forwards;}
+
+    @media (width >= 370px){
+        #input_toggle:checked ~ nav > #Input_DT:checked ~ #dropdown{
+            z-index: 25;
+            animation: ToggleDropdown3 0.8s forwards;
+        }
+    }
+    @media (width <= 371px){
+        #input_toggle:checked ~ nav > #Input_DT:checked ~ #dropdown{
+            transform:  translate(3px, 148px);
+            animation: ToggleDropdown4 0.8s forwards;
+        }
+    }
+}
