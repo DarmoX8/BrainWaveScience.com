@@ -69,6 +69,8 @@ function search(event){
         "REPIRATIONINHUMANSBEINGS", "TYPESOFRESPIRATION",
         "RESPIRATIONINOTHERANIMALSANDPLANTS",
         "PLANTS", "PHOTOSYNTHESIS", "HETEROTROPHICMODEOFNUTRITIONINPLANTS",
+        "DIGESTIVESYSTEM", "CIRCULATORYSYSTEM",
+        "EXCRETORYSYSTEM", "NERVOUSSYSTEM",
 
         "MATTER", "STATESOFMATTER", "CHANGES", 
         "CHEMICALREACTION", "SEPARATIONOFSUBSTANCES",
@@ -86,6 +88,8 @@ function search(event){
         "Biology.html#Respiration_in_Humans", "Biology.html#Types_of_Respiration",
         "Biology.html#Respiration_in_Other_Animals_and_Plants",
         "Biology.html#Plants", "Biology.html#Photosynthesis", "Biology.html#Heterotrophic",
+        "Biology.html#Digestive", "Biology.html#Circulatory",
+        "Biology.html#Excretory", "Biology.html#Nervous",
 
         "Chemistry.html#Matter", "Chemistry.html#States_of_Matter", "Chemistry.html#Changes", 
         "Chemistry.html#Chemical_Reaction", "Chemistry.html#Separation",
@@ -103,6 +107,8 @@ function search(event){
         "Repiration in Humans Beings", "Types of Respiration",
         "Respiration in Other Animals and Plants",
         "Plants", "Photosynthesis", "Heterotrophic Mode of Nutrition in Plants",
+        "Digestive System", "Circulatory System",
+        "Excretory System", "Nervous System",
 
         "Matter", "States of Matter", "Changes", 
         "Chemical Reaction", "Separation of Substances",
@@ -125,12 +131,8 @@ function search(event){
         if(NumOfResults == 1){
             // Redirect to another page if confirm == true.
             // \" are " in javascript.
-            if(!window.location.href.includes(link[WhichNum])){
-                if(confirm("Are you sure to go to \""+names[WhichNum]+"\" section?")){
-                    window.location.href = link[WhichNum];
-                }
-            } else{
-                alert("This is the page that you are looking for.");
+            if(confirm("Are you sure to go to \""+names[WhichNum]+"\" section?")){
+                window.location.href = link[WhichNum];
             }
         }
         
@@ -162,6 +164,10 @@ function search(event){
                 "All living organisms need food to sustain. The process of intake of food and its proper utilisation in the body is termed as nutrition. Components of food such as carbohydrates, fats, proteins, vitamins and minerals are called nutrients. Living organisms broadly exhibit two modes of nutrition- autotrophic (auto = self; trophic = to feed) and heterotrophic (hetero = another....",
                 "The process by which plants prepere their own food is called photosynthesis. It is the proces by which plants produce glucose by utilising carbon dioxide, water, sunlight (solor energy). The leaves of plants contain a green pigment called chlorophyll. This pigment imparts green colour to the plants and traps the solar energy. Plants take in carbon dioxide from the surrounding....",
                 "Some living organisms depend on other living organisms for food. These organisms have heterotrophic mode of nutrition and are called heterotrophs. All animals including humans and the plants that cannot carry out photosynthesis are heterotrophs. Monotropa and Cuscuta are examples of heterotrophic plants. Let us study different types of heterotrophic plants. || Parasitic Plants....",
+                "The human digestive system is a complex series of organs and structures that work together to break down food and absorb nutrients. It is also known as alimentary canal or the digestive tract. It consists of several main parts:  Mouth: The digestive process begins in the mouth, where teeth mechanically break down food, and salivary glands release enzymes to start the chemical....",
+                "The circulatory system, also known as the cardiovascular system, is a vital organ system in the human body responsible for the transportation of blood. It consists of the heart, blood vessels (arteries, veins, and capillaries), and blood. Blood: Blood is a red-coloured liquid which circulates through the circulatory system. There are two main components of blood: blood plasma....",
+                "The excretory system, also known as the urinary system, is responsible for removing waste and excess materials from the human body, maintaining the body's internal balance, and regulating various physiological functions. It primarily consists of several key organs and structures:  Kidneys: The kidneys are bean-shaped organs located on either side of the spine, just below the....",
+                "The nervous system is a complex and vital system in the human body responsible for transmitting signals, processing information, and controlling various physiological functions. The parts of the nervous system are: Brain: The brain is the central control center of the nervous system. It is responsible for processing sensory information, coordinating motor functions, and....",
 
                 "We see a variety of objects, living or non-living in our life. They are of different shapes, colours and sizes. But, all of them are made up of matter. Anything that has mass, occupies space and can be perceived by our senses is called matter. Thus, the air we breathe, the water we drink and the chair we sit are also made of matter. But, not everything is matter: time....",
                 "States of matter refer to the different physical forms that matter can exist in based on factors like temperature and pressure. There are 3 primary states of matter: Solid, Liquid and Gas. Each state has distinct properties and behaviors. Here's an difference of each states of matter: States of Matter/Properties || Solid  Definite Shape  Definite Volume  Tightly Packed....",
